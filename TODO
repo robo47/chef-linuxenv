@@ -1,0 +1,14 @@
+## TODO
+
+
+ - configure default-attributes for sudo (no env_reset)
+
+
+            :authorization => {
+                :sudo => {
+                    :groups => [ :root ],
+                    :users  => [ :vagrant ],
+                    :passwordless => true,
+                    :sudoers_defaults =>  [ '!env_reset', 'exempt_group=admin', 'secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"' ] # no env reset
+                }
+            }
